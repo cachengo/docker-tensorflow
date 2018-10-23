@@ -122,7 +122,7 @@ ENV TF_NEED_AWS=0
 
 RUN git clone https://github.com/tensorflow/tensorflow.git \
     && cd /tensorflow \
-    && git checkout v1.11.0 \
+    && git checkout v1.12.0-rc1 \
     && sed -i 's/        "-mfpu=neon",//' /tensorflow/tensorflow/contrib/lite/kernels/internal/BUILD \
     && ./configure \
     && bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package \
