@@ -51,7 +51,7 @@ COPY ./requirements.txt /requirements.txt
 RUN pip3 install -r requirements.txt \
     && pip3 install keras_applications==1.0.6 --no-deps \
     && pip3 install keras_preprocessing==1.0.5 --no-deps \
-    && pip3 install tensorflow_estimator --no-deps \
+    && pip3 install tensorflow_estimator --no-deps
 
 ENV BAZEL_VERSION=0.15.0
 
