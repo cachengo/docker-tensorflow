@@ -124,6 +124,7 @@ RUN git clone https://github.com/tensorflow/tensorflow.git \
     && cd /tensorflow \
     && git checkout v1.12.0-rc1 \
     && sed -i 's/        "-mfpu=neon",//' /tensorflow/tensorflow/contrib/lite/kernels/internal/BUILD \
+    && sed -i '0,/conditions:default": \[\],/s//conditions:default": glob(\["aws-cpp-sdk-core\/source\/platform\/linux-shared\/*\.cpp",\]),/' /tensorflow/third_party/aws.BUILD \
     && ./configure \
     && bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package \
     && /tensorflow/bazel-bin/tensorflow/tools/pip_package/build_pip_package / \
